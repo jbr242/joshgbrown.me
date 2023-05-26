@@ -1,11 +1,11 @@
 function Profile() {
   return (
     <div className="flex min-w-[100vw] min-h-screen justify-center items-center p-6 shadow-md">
-      <div className="flex flex-col justify-center items-center max-w-xs p-6 shadow-xl rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100">
+      <div className="flex flex-col justify-center items-center max-w-xs p-6 shadow-xl rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100 animate-drop-bounce">
         <img
           src="/joshuabrown1080x1080.png"
           alt=""
-          className="w-32 h-32 mx-auto object-cover rounded-full dark:bg-gray-500 aspect-square"
+          className="w-32 h-32 mx-auto object-cover rounded-full dark:bg-gray-500 aspect-square "
         />
         <div className="space-y-4 text-center divide-y divide-gray-700">
           <div className="my-2 space-y-1">
@@ -17,9 +17,9 @@ function Profile() {
           <div className="flex justify-center pt-2 space-x-4 align-center">
             <a
               rel="noopener noreferrer"
-              href="#"
+              href="https://github.com/jbr242"
               aria-label="GitHub"
-              className="p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
+              className="transition ease-in-out delay-150 bg-white-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300 p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
             >
               <svg
                 viewBox="0 0 496 512"
