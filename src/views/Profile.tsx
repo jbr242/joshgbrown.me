@@ -1,5 +1,3 @@
-import React from "react";
-
 function Profile() {
   return (
     <div className="flex min-w-[100vw] min-h-screen justify-center items-center p-6 shadow-md">
