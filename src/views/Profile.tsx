@@ -1,5 +1,6 @@
 import { useCycle } from "framer-motion";
 import { ProjectsToggle } from "../components/ProjectsToggle.tsx";
+import { Bubble } from "../components/Bubble.tsx";
 
 const FilmFlixTags = [
   { label: "React", colour: "text-teal-700", bg: "bg-teal-200" },
@@ -7,11 +8,34 @@ const FilmFlixTags = [
   { label: "TypeScript", colour: "text-blue-700", bg: "bg-blue-200" },
 ];
 
+const FilmFlixPosition =
+  "w-[18vw] h-[18vw] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 data-[open=true]:top-[25vh] data-[open=true]:left-[20vw] ";
+
+const FilmFlixInfo = {
+  description: "Front end application for a movie database",
+  title: "FilmFlix",
+};
+
+const SaturdayInfo = {
+  description: "A better way to play sports",
+  title: "Saturday",
+};
+
 const SaturdayTags = [
   { label: "Java", colour: "text-amber-700", bg: "bg-amber-200" },
   { label: "Springboot", colour: "text-emerald-700", bg: "bg-emerald-200" },
   { label: "MySQL", colour: "text-slate-700", bg: "bg-slate-200" },
   { label: "In Development", colour: "text-red-700", bg: "bg-red-200" },
+];
+
+const SaturdayPosition =
+  "w-[15vw] h-[15vw] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 data-[open=true]:top-[70vh] data-[open=true]:right-[20vw]";
+
+const NewProjectPosition =
+  "w-[18vw] h-[18vw] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 data-[open=true]:top-[25vh] data-[open=true]:right-[25vw] ";
+const NewProjectInfo = { title: "TBC", description: "" };
+const NewProjectTags = [
+  { label: "TBC", colour: "text-amber-700", bg: "bg-amber-200" },
 ];
 
 export default function Profile() {
@@ -22,58 +46,25 @@ export default function Profile() {
         <div className="w-max flex flex-col justify-center items-center">
           <div className="hidden md:block">
             <a href="http://filmflix.joshgbrown.me">
-              <div
-                className="w-[18vw] h-[18vw] rounded-full bg-white fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-0
-            data-[open=true]:scale-100 data-[open=true]:top-[25vh] data-[open=true]:left-[20vw] transition-all duration-1000 
-            flex items-center justify-center data-[open=true]:delay-0 delay-500 ease-in-out shadow-lg flex-col gap-1 bg-white-500 
-            hover:-translate-y-[calc(50%+1rem)] hover:scale-110 hover:bg-gray-200 hover:brightness-105 hover:duration-300"
-                data-open={isOpen}
-              >
-                <h1 className="font-bold text-5xl">FilmFlix</h1>
-                <div className="flex flex-row gap-1">
-                  {FilmFlixTags.map((each) => (
-                    <div
-                      key={each.label}
-                      className={`text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 ${each.bg} ${each.colour} rounded-full`}
-                    >
-                      {each.label}
-                    </div>
-                  ))}
-                </div>
-                <div className="text-sm p-2">
-                  Front end application for a movie database
-                </div>
-              </div>
+              <Bubble
+                position={FilmFlixPosition}
+                tags={FilmFlixTags}
+                info={FilmFlixInfo}
+                isOpen={isOpen}
+              />
             </a>
-            <div
-              className="w-[15vw] h-[15vw] rounded-full bg-white fixed top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 scale-0
-            data-[open=true]:scale-100 data-[open=true]:top-[70vh] data-[open=true]:right-[20vw] transition-all duration-1000 
-            flex items-center justify-center data-[open=true]:delay-0 delay-500 ease-in-out shadow-lg flex-col gap-1"
-              data-open={isOpen}
-            >
-              <h1 className="font-bold text-3xl">Saturday</h1>
-              <div className="flex flex-wrap justify-center gap-1">
-                {SaturdayTags.map((each) => (
-                  <div
-                    key={each.label}
-                    className={`text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 ${each.bg} ${each.colour} rounded-full`}
-                  >
-                    {each.label}
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm p-2 text-center">
-                A better way to play sports
-              </div>
-            </div>
-            <div
-              className="w-[18vw] h-[18vw] rounded-full bg-white fixed top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 scale-0
-            data-[open=true]:scale-100 data-[open=true]:top-[25vh] data-[open=true]:right-[25vw] transition-all duration-1000 
-            flex items-center justify-center data-[open=true]:delay-0 delay-500 ease-in-out shadow-lg"
-              data-open={isOpen}
-            >
-              this is just a cool circle
-            </div>
+            <Bubble
+              position={SaturdayPosition}
+              tags={SaturdayTags}
+              info={SaturdayInfo}
+              isOpen={isOpen}
+            />
+            <Bubble
+              position={NewProjectPosition}
+              tags={NewProjectTags}
+              info={NewProjectInfo}
+              isOpen={isOpen}
+            />
           </div>
 
           <div className="flex flex-col justify-center bg-white items-center max-w-xs p-6 shadow-xl rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100 animate-drop-bounce">
