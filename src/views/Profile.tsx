@@ -1,6 +1,7 @@
-import { useCycle } from "framer-motion";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
 import { ProjectsToggle } from "../components/ProjectsToggle.tsx";
 import { Bubble } from "../components/Bubble.tsx";
+import { useState } from "react";
 
 const FilmFlixTags = [
   { label: "React", colour: "text-teal-700", bg: "bg-teal-200" },
@@ -39,6 +40,7 @@ const NewProjectTags = [
 ];
 
 export default function Profile() {
+  const [selectedId, setSelectedId] = useState(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
   return (
     <div>
