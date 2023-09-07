@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useCycle } from "framer-motion";
+import { useCycle } from "framer-motion";
 import { ProjectsToggle } from "../components/ProjectsToggle";
 import { Bubble } from "../components/Bubble";
 import { useState } from "react";
@@ -39,7 +39,7 @@ const SaturdayPosition =
 // ];
 
 export default function Profile() {
-  const [selectedId, setSelectedId] = useState(null);
+  const [] = useState(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
   return (
     <div>
