@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useCycle } from "framer-motion";
-import { ProjectsToggle } from "../components/ProjectsToggle.tsx";
-import { Bubble } from "../components/Bubble.tsx";
+import { ProjectsToggle } from "../components/ProjectsToggle";
+import { Bubble } from "../components/Bubble";
 import { useState } from "react";
 
 const FilmFlixTags = [
@@ -26,18 +26,17 @@ const SaturdayTags = [
   { label: "Java", colour: "text-amber-700", bg: "bg-amber-200" },
   { label: "Springboot", colour: "text-emerald-700", bg: "bg-emerald-200" },
   { label: "MySQL", colour: "text-slate-700", bg: "bg-slate-200" },
-  { label: "In Development", colour: "text-red-700", bg: "bg-red-200" },
 ];
 
 const SaturdayPosition =
-  "w-[15vw] h-[15vw] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 data-[open=true]:top-[70vh] data-[open=true]:right-[20vw]";
+  "w-[18vw] h-[18vw] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 data-[open=true]:top-[70vh] data-[open=true]:right-[20vw]";
 
-const NewProjectPosition =
-  "w-[18vw] h-[18vw] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 data-[open=true]:top-[25vh] data-[open=true]:right-[25vw] ";
-const NewProjectInfo = { title: "TBC", description: "" };
-const NewProjectTags = [
-  { label: "TBC", colour: "text-amber-700", bg: "bg-amber-200" },
-];
+// const NewProjectPosition =
+//   "w-[18vw] h-[18vw] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 data-[open=true]:top-[25vh] data-[open=true]:right-[25vw] ";
+// const NewProjectInfo = { title: "TBC", description: "" };
+// const NewProjectTags = [
+//   { label: "TBC", colour: "text-amber-700", bg: "bg-amber-200" },
+// ];
 
 export default function Profile() {
   const [selectedId, setSelectedId] = useState(null);
@@ -55,18 +54,20 @@ export default function Profile() {
                 isOpen={isOpen}
               />
             </a>
+            <a href="https://csse-s302g7.canterbury.ac.nz/prod/">
             <Bubble
               position={SaturdayPosition}
               tags={SaturdayTags}
               info={SaturdayInfo}
               isOpen={isOpen}
             />
-            <Bubble
+            </a>
+            {/* <Bubble
               position={NewProjectPosition}
               tags={NewProjectTags}
               info={NewProjectInfo}
               isOpen={isOpen}
-            />
+            /> */}
           </div>
 
           <div className="flex flex-col justify-center bg-white items-center max-w-xs p-6 shadow-xl rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100 animate-drop-bounce">
@@ -89,7 +90,7 @@ export default function Profile() {
                   rel="github"
                   href="https://github.com/jbr242"
                   aria-label="GitHub"
-                  className="transition ease-in-out delay-150 bg-white-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-300 duration-300 p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
+                  className="transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 hover:bg-gray-300 duration-300 p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
                 >
                   <img
                     src="github-mark.svg"
@@ -101,7 +102,7 @@ export default function Profile() {
                   rel="instagram"
                   href="https://www.instagram.com/joshgbrown/"
                   aria-label="Instagram"
-                  className="transition ease-in-out delay-150 bg-white-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-300 duration-300 p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
+                  className="transition ease-in-out delay-150 bg-white hover:-translate-y-1 hover:scale-110 hover:bg-gray-300 duration-300 p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
                 >
                   <img
                     src="instagram.png"
@@ -113,7 +114,7 @@ export default function Profile() {
                   rel="email"
                   href="mailto:joshuagbrown57@gmail.com"
                   aria-label="Email"
-                  className="transition ease-in-out delay-150 bg-white-500 hover:-translate-y-1 hover:scale-110 hover:bg-gray-300 duration-300 p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
+                  className="transition ease-in-out delay-150 bg-white  hover:-translate-y-1 hover:scale-110 hover:bg-gray-300 duration-300 p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
                 >
                   <img
                     src="mail.png"
